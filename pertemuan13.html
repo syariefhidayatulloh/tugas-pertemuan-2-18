@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Pribadi Syarief</title>
+    <style>
+        /* CSS Embed */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+        .header {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .menu {
+            background-color: #e0f7fa;
+            width: 200px;
+            float: left;
+            padding: 15px;
+            height: calc(100vh - 120px);
+        }
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: #006064;
+            padding: 10px 0;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            background-color: #b2ebf2;
+        }
+        .konten {
+            margin-left: 220px;
+            padding: 20px;
+            background-color: #f1f8e9;
+            min-height: calc(100vh - 120px);
+        }
+        .footer {
+            clear: both;
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Contoh Class untuk DIV dan SPAN */
+        .merah { color: red; font-weight: bold; }
+        .biru { color: blue; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    Website Pribadi Syarief
+</div>
+
+<!-- Menu Kiri -->
+<div class="menu">
+    <a href="#" onclick="tampilkanHalaman('home')">Beranda</a>
+    <a href="#" onclick="tampilkanHalaman('profil')">Profil</a>
+    <a href="#" onclick="tampilkanHalaman('portofolio')">Portofolio</a>
+    <a href="#" onclick="tampilkanHalaman('kontak')">Kontak</a>
+</div>
+
+<!-- Konten -->
+<div class="konten" id="konten">
+    <!-- Konten awal: Beranda -->
+    <h2>Selamat Datang</h2>
+    <p>Halo! Saya <span class="merah">Syarief</span>, mahasiswa IT dan videographer.</p>
+    <p>Website ini menggunakan banyak <div>DIV</div> dan <span class="biru">SPAN</span> untuk styling.</p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2025 Syarief
+</div>
+
+<!-- Script untuk ganti konten -->
+<script>
+function tampilkanHalaman(page){
+    let konten = document.getElementById('konten');
+    if(page === 'home'){
+        konten.innerHTML = "<h2>Beranda</h2><p>Selamat datang di website pribadi saya.</p>";
+    } else if(page === 'profil'){
+        konten.innerHTML = "<h2>Profil</h2><p>Nama: Syarief<br>Jurusan: IT<br>Keahlian: Videography dan Programming</p>";
+    } else if(page === 'portofolio'){
+        konten.innerHTML = "<h2>Portofolio</h2><ul><li>Video Promosi</li><li>Animasi Java</li><li>Website Sederhana</li></ul>";
+    } else if(page === 'kontak'){
+        konten.innerHTML = "<h2>Kontak</h2><p>Email: syarief@example.com<br>Telepon: +62 812-3456-7890</p>";
+    }
+}
+</script>
+
+</body>
+</html>

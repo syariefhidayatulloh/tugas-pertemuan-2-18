@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deret Bilangan Genap Habis Dibagi 3</title>
+    <script>
+        function tampilDeret() {
+            // Input nilai awal dan akhir dari user
+            let nilaiAwal = parseInt(prompt("Masukkan nilai awal:"));
+            let nilaiAkhir = parseInt(prompt("Masukkan nilai akhir:"));
+
+            // Validasi input
+            if (isNaN(nilaiAwal) || isNaN(nilaiAkhir)) {
+                alert("Input harus berupa angka!");
+                return;
+            }
+
+            if (nilaiAwal > nilaiAkhir) {
+                alert("Nilai awal harus lebih kecil atau sama dengan nilai akhir!");
+                return;
+            }
+
+            let deret = [];
+            let jumlahBilangan = 0;
+            let jumlahNilai = 0;
+
+            // Loop untuk mencari bilangan genap yang habis dibagi 3
+            for (let i = nilaiAwal; i <= nilaiAkhir; i++) {
+                if (i % 2 === 0 && i % 3 === 0) {
+                    deret.push(i);
+                    jumlahBilangan++;
+                    jumlahNilai += i;
+                }
+            }
+
+            // Menampilkan hasil
+            document.getElementById("output").innerHTML = `
+                Nilai Awal: ${nilaiAwal} <br>
+                Nilai Akhir: ${nilaiAkhir} <br>
+                Deret yang tampil: ${deret.join(", ")} <br>
+                Jumlah deret bilangan: ${jumlahBilangan} bilangan <br>
+                Jumlah nilai bilangan tersebut: ${jumlahNilai}
+            `;
+        }
+
+        // Jalankan fungsi saat halaman selesai dimuat
+        window.onload = tampilDeret;
+    </script>
+</head>
+<body>
+    <h2>Deret Bilangan Genap Habis Dibagi 3</h2>
+    <div id="output"></div>
+</body>
+</html>

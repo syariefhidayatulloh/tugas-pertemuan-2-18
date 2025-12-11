@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <script>
+        function hitung() {
+            // Mengambil nilai dari form
+            let angka1 = parseFloat(document.getElementById("angka1").value);
+            let angka2 = parseFloat(document.getElementById("angka2").value);
+            let operator = document.getElementById("operator").value;
+            let hasil;
+
+            // Mengecek operator dan menghitung
+            if (operator === "+") {
+                hasil = angka1 + angka2;
+            } else if (operator === "-") {
+                hasil = angka1 - angka2;
+            } else if (operator === "*") {
+                hasil = angka1 * angka2;
+            } else if (operator === "/") {
+                if (angka2 === 0) {
+                    alert("Tidak bisa dibagi dengan 0!");
+                    return;
+                }
+                hasil = angka1 / angka2;
+            } else {
+                alert("Operator tidak valid!");
+                return;
+            }
+
+            // Menampilkan hasil
+            alert("Hasil: " + angka1 + " " + operator + " " + angka2 + " = " + hasil);
+            document.getElementById("hasil").innerText = "Hasil: " + hasil;
+        }
+    </script>
+</head>
+<body>
+    <h2>Kalkulator Sederhana</h2>
+    <form onsubmit="event.preventDefault(); hitung();">
+        <label for="angka1">Angka 1:</label>
+        <input type="number" id="angka1" required><br><br>
+
+        <label for="operator">Operator:</label>
+        <select id="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+
+        <label for="angka2">Angka 2:</label>
+        <input type="number" id="angka2" required><br><br>
+
+        <button type="submit">Hitung</button>
+    </form>
+
+    <p id="hasil"></p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Menghitung Luas Trapesium</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f0f8ff; }
+        h2 { color: #2e8b57; }
+        .output { margin-top: 20px; background-color: #e0f7fa; padding: 15px; border-radius: 5px; }
+        label, input { display: block; margin: 10px 0; }
+        input[type="number"] { padding: 5px; width: 200px; }
+        button { padding: 10px 15px; background-color: #2e8b57; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #3cb371; }
+    </style>
+</head>
+<body>
+
+<h2>Menghitung Luas Trapesium</h2>
+
+<label for="garisAtas">Garis Atas (cm):</label>
+<input type="number" id="garisAtas" value="8">
+
+<label for="garisBawah">Garis Bawah (cm):</label>
+<input type="number" id="garisBawah" value="12">
+
+<label for="tinggi">Tinggi (cm):</label>
+<input type="number" id="tinggi" value="5">
+
+<button onclick="hitungLuas()">Hitung Luas</button>
+
+<div class="output" id="hasil"></div>
+
+<script>
+function hitungLuas() {
+    // Ambil nilai dari input
+    let a = parseFloat(document.getElementById('garisAtas').value);
+    let b = parseFloat(document.getElementById('garisBawah').value);
+    let t = parseFloat(document.getElementById('tinggi').value);
+
+    // Hitung luas trapesium
+    let luas = 0.5 * (a + b) * t;
+
+    // Tampilkan hasil
+    let output = `
+        Diketahui:<br>
+        Garis Atas: ${a} Cm<br>
+        Garis Bawah: ${b} Cm<br>
+        Tinggi: ${t} Cm<br><br>
+        Maka:<br>
+        Luas: 0.5 x (${a} + ${b}) x ${t} = ${luas} Cm<sup>2</sup>
+    `;
+    document.getElementById('hasil').innerHTML = output;
+}
+</script>
+
+</body>
+</html>
