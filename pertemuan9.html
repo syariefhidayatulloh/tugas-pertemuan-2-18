@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Pribadi Syarief</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        table {
+            width: 100%;
+            height: 100vh;
+            border-collapse: collapse;
+        }
+        td {
+            vertical-align: top;
+            border: 1px solid #2e8b57;
+        }
+        #menu {
+            width: 200px;
+            background-color: #e0f7fa;
+            padding: 10px;
+        }
+        #menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #006064;
+            font-weight: bold;
+        }
+        #menu a:hover {
+            background-color: #b2ebf2;
+        }
+        #konten {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2e8b57;
+        }
+    </style>
+    <script>
+        function tampilkanHalaman(page) {
+            let konten = document.getElementById('konten');
+            if(page === 'home') {
+                konten.innerHTML = `
+                    <h1>Selamat Datang di Website Pribadi Syarief</h1>
+                    <p>Halo! Saya Syarief, seorang mahasiswa IT dan videographer. Website ini mempromosikan profil, karya, dan kontak saya.</p>
+                `;
+            } else if(page === 'profil') {
+                konten.innerHTML = `
+                    <h1>Profil Saya</h1>
+                    <p>Nama: Syarief</p>
+                    <p>Jurusan: Information Technology</p>
+                    <p>Keahlian: Videography, Programming, Web Development</p>
+                `;
+            } else if(page === 'portofolio') {
+                konten.innerHTML = `
+                    <h1>Portofolio</h1>
+                    <p>Berikut beberapa karya saya:</p>
+                    <ul>
+                        <li>Video Promosi Produk</li>
+                        <li>Animasi Stack Java</li>
+                        <li>Website Sederhana</li>
+                    </ul>
+                `;
+            } else if(page === 'kontak') {
+                konten.innerHTML = `
+                    <h1>Kontak Saya</h1>
+                    <p>Email: syarief@example.com</p>
+                    <p>Telepon: +62 812-3456-7890</p>
+                    <p>Instagram: @syarief_videography</p>
+                `;
+            }
+        }
+
+        // Tampilkan halaman Home saat pertama kali dibuka
+        window.onload = function() {
+            tampilkanHalaman('home');
+        }
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td id="menu">
+            <h2>Menu</h2>
+            <a href="#" onclick="tampilkanHalaman('home')">Beranda</a>
+            <a href="#" onclick="tampilkanHalaman('profil')">Profil</a>
+            <a href="#" onclick="tampilkanHalaman('portofolio')">Portofolio</a>
+            <a href="#" onclick="tampilkanHalaman('kontak')">Kontak</a>
+        </td>
+        <td id="konten">
+            <!-- Konten akan tampil di sini -->
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

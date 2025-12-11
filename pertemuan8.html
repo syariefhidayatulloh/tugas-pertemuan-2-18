@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Diri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 20px;
+        }
+        h1 {
+            color: #2e8b57;
+            text-align: center;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #2e8b57;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #2e8b57;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #2e8b57;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3cb371;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Form Data Diri</h1>
+
+<form action="#" method="post">
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+    <label>Jenis Kelamin:</label>
+    <input type="radio" id="laki" name="gender" value="Laki-laki" required>
+    <label for="laki">Laki-laki</label>
+    <input type="radio" id="perempuan" name="gender" value="Perempuan" required>
+    <label for="perempuan">Perempuan</label>
+
+    <label for="tanggal">Tanggal Lahir:</label>
+    <input type="date" id="tanggal" name="tanggal" required>
+
+    <label for="alamat">Alamat:</label>
+    <textarea id="alamat" name="alamat" rows="4" placeholder="Masukkan alamat lengkap" required></textarea>
+
+    <input type="submit" value="Kirim">
+</form>
+
+</body>
+</html>
